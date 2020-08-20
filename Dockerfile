@@ -34,6 +34,9 @@ RUN ln -s /usr/bin/xvfb-chromium /usr/bin/google-chrome \
 # create symlinks to chromedriver and geckodriver (to the PATH)
 RUN ln -s /usr/bin/geckodriver /usr/bin/chromium-browser \
     && chmod 777 /usr/bin/geckodriver \
-    && chmod 777 /usr/bin/chromium-browser
+    && chmod 777 /usr/bin/chromium-browser \
+    && mkdir /tests
 
-RUN cpanm Selenium::Chrome
+RUN cpanm -n -q App::cpm && cpm Selenium::Chrome
+
+WORKDIR /tests
