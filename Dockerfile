@@ -37,6 +37,6 @@ RUN ln -s /usr/bin/geckodriver /usr/bin/chromium-browser \
     && chmod 777 /usr/bin/chromium-browser \
     && mkdir /tests
 
-RUN cpanm -n -q App::cpm && cpm Selenium::Chrome
+RUN cpanm -n -q App::cpm && cpm install Selenium::Chrome
 
 WORKDIR /tests
