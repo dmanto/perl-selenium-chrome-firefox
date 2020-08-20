@@ -3,17 +3,11 @@ FROM perl:5.32-buster
 RUN apt-get update && apt-get install -yq \
     firefox-esr \
     chromium \
-    git-core \
     lsof \
     xvfb \
     xsel \
-    unzip \
-    # python-pytest=3.0.6-1 \
     libgconf-2-4 \
     libncurses5 \
-    libxml2-dev \
-    libxslt-dev \
-    libz-dev \
     xclip
 
 # GeckoDriver v0.19.1
